@@ -1,0 +1,45 @@
+spring:
+  datasource:
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    password: rGSm2UeNJszK8ezt
+    url: jdbc:sqlserver://portal.tributo.co:1433;databaseName=financiero
+    username: sa
+    platform: mssql
+  jackson:
+    locale: es_CO
+    time-zone: America/Bogota
+  mail:
+      default-encoding: UTF-8
+      host: smtp.gmail.com
+      username: noreply.financiero@gmail.com
+      password: noreply123456789
+      port: 587
+      properties:
+          mail:
+              smtp:
+                  auth: true
+                  starttls:
+                      enable: true
+      protocol: smtp
+      test-connection: false
+  jpa:
+    database-platform: org.hibernate.dialect.SQLServerDialect
+    openInView: false
+    show-sql: true
+    hibernate:
+      naming:
+        implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyJpaImpl
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+      ddl-auto: none
+  servlet:
+    multipart:
+      max-file-size: 1000MB
+      max-request-size: 1000MB
+  application:
+    name: Financiero
+  data:
+    jpa:
+      repositories:
+        enabled: true
+server:
+  port: 5000
